@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from 'react';
+import HeroCard from "@/components/HeroCard";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -66,15 +67,15 @@ export default function Home() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    <Link href="#Home" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                    <Link href="#Home" className="nav-link rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                           aria-current="page">Home</Link>
                     <Link href="/projects"
                           className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</Link>
                     <Link href="#contact-me"
-                          className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact
+                          className=" nav-linkrounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact
                       Me</Link>
                     <Link href="#About-Me"
-                          className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
+                          className="nav-link rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
                       Me</Link>
                   </div>
                 </div>
@@ -85,47 +86,58 @@ export default function Home() {
           {isOpen && (
               <div className="sm:hidden" id="mobile-menu">
                 <div className="space-y-1 px-2 pt-2 pb-3">
-                  <Link href="#Home" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                  <Link href="#Home" className="nav-link block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
                         aria-current="page">Home</Link>
                   <Link href="/projects"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</Link>
+                        className="nav-link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</Link>
                   <Link href="#contact-me"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact
+                        className="nav-link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact
                     Me</Link>
                   <Link href="#About-Me"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
+                        className="nav-link block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
                     Me</Link>
                 </div>
               </div>
           )}
         </nav>
 
+
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
+          <div className={"p-10"}><HeroCard/></div>
 
           <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-            <p className={"text-lg font-bold items-start text-white"}>
-              Hey guys I am Sher Partap Singh
+            <div className={"p-10 "}><p className={"text-xl font-bold items-center justify-center "}>
+              So my name is Sher Partap Singh and here is quick intro about me
             </p>
-            <div
-                className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-              <a
-                  className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-                  href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                By{" "}
-                <Image
-                    src="/vercel.svg"
-                    alt="Vercel Logo"
-                    className="dark:invert"
-                    width={100}
-                    height={24}
-                    priority
-                />
-              </a>
             </div>
+
           </div>
+
+
+
+
+
+          <section id="About-Me" className="flex flex-col items-center bg-grey border border-gray-200 rounded-lg shadow md:flex-row max-w-4xl mx-auto dark:border-gray-700 dark:bg-gray-800 p-10">
+            <Image className="object-cover w-full rounded-t-xl h-200 md:h-auto md:max-w-full md:rounded-none md:rounded-s-lg"
+                   src="/2.PNG" alt="logog" width={200} height={200}/>
+            <div className="flex flex-col justify-between p-4 leading-normal">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">About Me</h5>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">lorem ipsum   cwjbf jwebfke efib ffbfi nfb fnfk lorem ipsum   cwjbf jwebfke efib ffbfi nfb fnf lorem ipsum   cwjbf jwebfke efib ffbfi nfb fnf lorem ipsum   cwjbf jwebfke efib ffbfi nfb fnf lorem ipsum   cwjbf jwebfke efib ffbfi nfb fnf lorem ipsum   cwjbf jwebfke efib ffbfi nfb fnf </p>
+            </div>
+          </section>
+          <Link href="https://drive.google.com/file/d/1u8rx6WdxD3okgYblTgZ5s37u0WGa2vkZ/view?usp=sharing" target={'_blank'}>
+            <div className="hover:cursor-pointer flex justify-center items-center">
+              <Image
+                  src=""
+                  alt="clickable image"
+                  width={iconSize}
+                  height={iconSize}
+              />
+            </div>
+
+          </Link>
+
+
 
           <div
               className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
