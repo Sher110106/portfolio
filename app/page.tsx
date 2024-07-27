@@ -227,10 +227,14 @@ export default function Home() {
               </p>
             </a>
           </div>
+          <section id={'contact-me'}>
           <Contact/>
+          </section>
+
 
 
         </main>
+        <Footer/>
 
 
       </>
